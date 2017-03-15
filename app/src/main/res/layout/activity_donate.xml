@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.d.life.donate"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+    </TableRow>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:background="@drawable/gray"
+        android:hint="Name"
+        android:ems="10"
+        android:id="@+id/editText9"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Organs"
+        android:id="@+id/textView11"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@drawable/gray"
+
+        android:layout_height="81dp"
+        >
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="98dp"
+            android:layout_height="94dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lungs"
+                android:id="@+id/checkBox2"
+                android:checked="false"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kidney"
+                android:id="@+id/checkBox5"
+                android:checked="false"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eyes"
+                android:id="@+id/checkBox"
+                android:checked="false"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liver"
+                android:id="@+id/checkBox3"
+                android:checked="false"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pancreas "
+            android:id="@+id/checkBox4"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText11"
+        android:hint="Reason"
+        android:background="@drawable/gray"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.47"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="phone"
+        android:hint="Contact Number"
+        android:background="@drawable/gray"
+        android:ems="10"
+        android:id="@+id/editText12"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/button8"/>
+
+</LinearLayout>

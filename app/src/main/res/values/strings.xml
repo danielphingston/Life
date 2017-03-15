@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Life</string>
+    <string name="register">Register</string>
+
+    <string-array name="blood">
+        <item>Select</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+
+    <string-array name="organ">
+        <item>Select</item>
+        <item>Liver</item>
+        <item>Kidney</item>
+        <item>Lungs</item>
+        <item>Eyes</item>
+        <item>Pancreas </item>
+        <item>Tendons </item>
+    </string-array>
+
+
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+
+    <string name="faq1">Why should I become an Organ Donor?</string>
+    <string name="a1">In India,there are over 150,000 people currently in need of kidney transplants. The wait-list for patients with heart and liver failure is growing all the time as well
+
+    And each year, thousands of people die while waiting for a transplant, because no suitable donor can be found for them. The need for organ donors has never been greater. It can be hard to think about what\'s going to happen to your body after you die, let alone donating your organs and tissue. But being an organ donor is a generous and worthwhile decision that can be a lifesaver.
+
+    All people can be considered as being potential organ and tissue donors after death. However, the presence of active cancer, active HIV, active infection (for example, sepsis) or Intravenous (IV) drug use would absolutely rule out donation.
+
+    Patients who have Hepatitis C may still donate organs to a patient who also has Hepatitis C. The same is true for Hepatitis B — but this happens in very rare cases. Most cancer patients may donate corneas.</string>
+
+    <string name="q2">How does Organ Donation help patients with organ failure?</string>
+    <string name="a2">For organ recipients, a transplant often means a second chance at life. Vital organs such as the heart, pancreas, liver, kidneys and lungs can be transplanted to those whose organs are failing. It allows many recipients to return to a normal lifestyle. For others, a cornea or tissue transplant means the ability to see again or the recovery of mobility and freedom from pain.</string>
+
+    <string name="q3">What organs and tissues can be donated?</string>
+    <string name="a3">Currently, the following organs can be donated and transplanted:
+
+    \n<b>Heart</b> - A muscular organ that pumps blood through the body. Heart transplant is used to help those suffering from heart failure and babies born with heart defects.
+
+    \n<b>Liver</b> - A large organ that secretes bile and is active in the formation of certain blood proteins and in the metabolism of carbohydrates, fats, and proteins. Liver transplant is used to treat various conditions which cause liver failure, such as cirrhosis or liver cancer.
+
+    \n<b>Kidneys</b> - A pair of organs that maintain proper water and electrolyte balance, regulate acid-base concentration, and filter the blood of metabolic waste, which is excreted as urine. A kidney transplant may be recommended for those who have been diagnosed with end stage kidney disease.
+
+    \n<b>Lungs</b> - A pair of spongy organs that remove carbon dioxide from the blood and provide it with oxygen. Lung transplants are recommended for those with severe lung disease. Sometimes there is a combined heart and lung transplant.
+
+    \n<b>Pancreas</b> - A long, irregularly shaped gland which lies behind the stomach and aids in the digestion of proteins, carbohydrates, and fats. Pancreas transplant is indicated for those with insulin-dependent Type I diabetes.
+
+    Tissues that can be donated are:
+
+    \n<b>Cornea</b> - The outer curved transparent tissue covering the iris and pupil on the outside of the eye. Corneal transplant is a common procedure used to restore vision for those with eye diseases and corneal infections.
+
+    \n<b>Skin</b> - A tissue which protects the body from infection and injury. Skin transplants, referred to as skin grafts, are used to treat severe burns, extensive wounds and skin loss due to infection.
+
+    \n<b>Heart Valves</b> - Tissues that prevent the back flow of blood into the heart. Heart valve transplants are used to treat malfunctioning heart valves caused by infections, birth defects and aging. When an entire heart is not usable, heart valves are removed from the heart and are used for transplants .
+
+    \n<b>Bones</b> - Connective tissues that are dense, semi rigid, porous, and calcified forming the major portion of the skeleton of most vertebrates. Bone transplantation is done for reconstruction related to trauma, tumours, disease and fractures and to fill defects. For the recipient, it restores mobility, decreases pain, prevents amputation and collapse of bone.
+
+    \n<b>Tendons</b> - Tissues which attach muscles to bones. Tendon transplants are recommended for patients who have lost muscle function due to nerve injury or damage to tendons. It improves the recipient’s life and makes it pain free.</string>
+
+
+</resources>
