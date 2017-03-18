@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,7 +29,10 @@ public class Request extends AppCompatActivity {
         final EditText scontact = (EditText) findViewById( R.id.scontact );
         final EditText sage = (EditText) findViewById( R.id.sage );
         final EditText sreason = (EditText) findViewById( R.id.sreason );
+        final EditText sstate = (EditText) findViewById( R.id.sstate );
+        final EditText scity = (EditText) findViewById( R.id.scity );
         final Button brequest = (Button) findViewById( R.id.brequest );
+
 
 
         brequest.setOnClickListener( new View.OnClickListener() {
@@ -36,12 +40,15 @@ public class Request extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
                 final String organ = sorgan.getSelectedItem().toString();
                 final String blood = sblood.getSelectedItem().toString();
                 final String contact = scontact.getText().toString();
                 final int age = Integer.parseInt(sage.getText().toString());
                 final String reason = sreason.getText().toString();
-
+                final String state = sstate.getText().toString();
+                final String city = scity.getText().toString();
+                Toast.makeText( getApplicationContext(),organ+blood+contact+age+reason+state+city,Toast.LENGTH_LONG ).show();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -73,7 +80,7 @@ public class Request extends AppCompatActivity {
                 };
 
 
-               RequestRequest requestRequest= new RequestRequest( organ, blood, contact, age, reason, responseListener );
+               RequestRequest requestRequest= new RequestRequest( organ, blood, contact, age, state, city, reason, responseListener );
                 RequestQueue queue = Volley.newRequestQueue( Request.this );
                 queue.add( requestRequest );
 
