@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -14,16 +16,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-}
+
+       final TextView etusername = (TextView) findViewById( R.id.etusername );
+       etusername.setVisibility( View.GONE );
+       Button login = (Button) findViewById( R.id.login );
+
+       Intent intent = getIntent();
+       String username = intent.getStringExtra( "username" );
+       String password = intent.getStringExtra( "password" );
+       if(username!=null){
+           etusername.setVisibility( View.VISIBLE );
+           login.setVisibility( View.GONE );
+       }
+
+       String message = "welcome "+username;
+       etusername.setText(message);
+
+       }
     public void buttonOnClick(View v){
         Button button=(Button) v;
-        startActivity(new Intent(getApplicationContext(),register.class));
+        Intent intent = new Intent(this, register.class);
+        startActivity(intent);
 
     }
 
     public void Login(View v){
         Button l=(Button) v;
         startActivity(new Intent(getApplicationContext(),Login.class));
+
     }
 
     public void Request(View v){

@@ -9,6 +9,8 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class register extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_register );
 
+        final ProgressBar progress= (ProgressBar) findViewById( R.id.p1 );
         final EditText etusername = (EditText) findViewById( R.id.etusername );
         final EditText etpassword = (EditText) findViewById( R.id.etpassword );
         final Button bregister = (Button) findViewById( R.id.bregister );
@@ -35,6 +38,9 @@ public class register extends AppCompatActivity {
         bregister.setOnClickListener( new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
+
+                                              progress.setVisibility(View.VISIBLE );
+                                              bregister.setVisibility( View.GONE );
 
                                               final String username = etusername.getText().toString();
                                               final String password = etpassword.getText().toString();
@@ -48,7 +54,11 @@ public class register extends AppCompatActivity {
 
                                                           if (success) {
                                                               Intent intent = new Intent( register.this, MainActivity.class );
+                                                              intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                                                               register.this.startActivity( intent );
+                                                              Toast.makeText( getApplicationContext(),"Register Successful",Toast.LENGTH_SHORT ).show();
+
+
                                                           } else {
                                                               AlertDialog.Builder builder = new AlertDialog.Builder( register.this );
                                                               builder.setMessage( "Register failed" )
