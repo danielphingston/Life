@@ -55,7 +55,7 @@ public class Donors extends AppCompatActivity implements View.OnClickListener {
     private void showJSON(String json){
         ParseJSON pj = new ParseJSON(json);
         pj.parseJSON();
-        CustomList cl = new CustomList(this, ParseJSON.ids,ParseJSON.names,ParseJSON.emails);
+        CustomList cl = new CustomList(this, ParseJSON.ids,ParseJSON.names,ParseJSON.emails,ParseJSON.ages,ParseJSON.states,ParseJSON.citys,ParseJSON.reasons);
         listView.setAdapter(cl);
     }
 
