@@ -1,48 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical" android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+    android:background="@drawable/bound"
+    android:weightSum="1">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New organ"
-        android:id="@+id/organs" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New blood"
-        android:id="@+id/bloods" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New contact"
-        android:id="@+id/contacts" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New contact"
-        android:id="@+id/ages" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New contact"
-        android:id="@+id/states" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New contact"
-        android:id="@+id/citys" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New contact"
-        android:id="@+id/reasons" />
+        android:text="New name"
+        android:id="@+id/names"
+        android:singleLine="false"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New organ"
+            android:id="@+id/organs"
+            android:typeface="serif"
+            android:textStyle="bold|italic"
+            android:layout_marginLeft="15dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New blood"
+            android:id="@+id/bloods"
+            android:layout_marginLeft="10dp"
+            android:typeface="serif"
+            android:textStyle="bold|italic" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New contact"
+            android:id="@+id/contacts"
+            android:layout_marginLeft="10dp"
+            android:typeface="serif"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New age"
+            android:id="@+id/ages"
+            android:layout_marginLeft="10dp"
+            android:typeface="serif"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New state"
+            android:id="@+id/states"
+            android:layout_marginLeft="10dp"
+            android:typeface="serif"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New city"
+            android:id="@+id/citys"
+            android:layout_marginLeft="10dp"
+            android:typeface="serif"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New reason"
+        android:id="@+id/reasons"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.09"
+        android:textStyle="italic"
+        android:typeface="normal"
+        android:layout_marginLeft="20dp" />
 
 
 </LinearLayout>

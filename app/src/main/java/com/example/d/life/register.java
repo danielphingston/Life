@@ -47,8 +47,8 @@ public class register extends AppCompatActivity {
                                               @Override
                                               public void onClick(View v) {
 
-                                                  progress.setVisibility( View.VISIBLE );
-                                                  bregister.setVisibility( View.GONE );
+                                                  progress.setVisibility(View.VISIBLE);
+                                                  bregister.setVisibility(View.GONE);
 
 
                                                   final String username = etusername.getText().toString();
@@ -58,85 +58,83 @@ public class register extends AppCompatActivity {
 
                                                   //errors
 
-                                                  if(!email.contains( "@" )){etemail.setError( "inavlid email" );}
+                                                  if (!email.contains("@")) {
+                                                      etemail.setError("inavlid email");
+                                                  }
 
-                                                        if (TextUtils.isEmpty( name )) {
-                                                      etname.setError( "cannot be empty" );
-                                                      progress.setVisibility( View.GONE );
-                                                      bregister.setVisibility( View.VISIBLE );
+                                                  if (TextUtils.isEmpty(name)) {
+                                                      etname.setError("cannot be empty");
+                                                      progress.setVisibility(View.GONE);
+                                                      bregister.setVisibility(View.VISIBLE);
                                                       return;
-                                                     }
+                                                  } else if (TextUtils.isEmpty(email)) {
+                                                      etemail.setError("cannot be empty");
+                                                      progress.setVisibility(View.GONE);
+                                                      bregister.setVisibility(View.VISIBLE);
+                                                      return;
 
-                                                  if (TextUtils.isEmpty( email )) {
-                                                      etemail.setError( "cannot be empty" );
-                                                      progress.setVisibility( View.GONE );
-                                                      bregister.setVisibility( View.VISIBLE );
+                                                  } else if (TextUtils.isEmpty(username)) {
+                                                      etusername.setError("cannot be empty");
+                                                      progress.setVisibility(View.GONE);
+                                                      bregister.setVisibility(View.VISIBLE);
+                                                      return;
+                                                  } else if (TextUtils.isEmpty(password)) {
+                                                      etpassword.setError("cannot be empty");
+                                                      progress.setVisibility(View.GONE);
+                                                      bregister.setVisibility(View.VISIBLE);
                                                       return;
 
                                                   }
-                                                  if (TextUtils.isEmpty( username )) {
-                                                      etusername.setError( "cannot be empty" );
-                                                      progress.setVisibility( View.GONE );
-                                                      bregister.setVisibility( View.VISIBLE );
-                                                      return;
-                                                  }
-                                                      if (TextUtils.isEmpty( password )) {
-                                                          etpassword.setError( "cannot be empty" );
-                                                          progress.setVisibility( View.GONE );
-                                                          bregister.setVisibility( View.VISIBLE );
-                                                          return;
+                                                  //errors end
+                                                  else {
 
-                                                      }
+                                                      if (password.equals(etcon.getText().toString())) {
 
-                                              //errors end
+                                                          Response.Listener<String> responseListener = new Response.Listener<String>() {
+                                                              @Override
+                                                              public void onResponse(String response) {
+                                                                  try {
+                                                                      JSONObject jsonResponse = new JSONObject(response);
+                                                                      boolean success = jsonResponse.getBoolean("success");
 
-
-                                                  if (password.equals( etcon.getText().toString() )) {
-
-                                                      Response.Listener<String> responseListener = new Response.Listener<String>() {
-                                                          @Override
-                                                          public void onResponse(String response) {
-                                                              try {
-                                                                  JSONObject jsonResponse = new JSONObject( response );
-                                                                  boolean success = jsonResponse.getBoolean( "success" );
-
-                                                                  if (success) {
-                                                                      Intent intent = new Intent( register.this, MainActivity.class );
-                                                                      intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
-                                                                      register.this.startActivity( intent );
-                                                                      Toast.makeText( getApplicationContext(), "Register Successful", Toast.LENGTH_SHORT ).show();
+                                                                      if (success) {
+                                                                          Intent intent = new Intent(register.this, MainActivity.class);
+                                                                          intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                                          register.this.startActivity(intent);
+                                                                          Toast.makeText(getApplicationContext(), "Register Successful", Toast.LENGTH_SHORT).show();
 
 
-                                                                  } else {
-                                                                      AlertDialog.Builder builder = new AlertDialog.Builder( register.this );
-                                                                      builder.setMessage( "Register failed" )
-                                                                              .setNegativeButton( "Retry", null )
-                                                                              .create()
-                                                                              .show();
+                                                                      } else {
+                                                                          AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+                                                                          builder.setMessage("Register failed")
+                                                                                  .setNegativeButton("Retry", null)
+                                                                                  .create()
+                                                                                  .show();
+                                                                      }
+
+
+                                                                  } catch (JSONException e) {
+                                                                      e.printStackTrace();
                                                                   }
 
-
-                                                              } catch (JSONException e) {
-                                                                  e.printStackTrace();
                                                               }
 
-                                                          }
-
-                                                      };
+                                                          };
 
 
-                                                      RegisterRequest registerRequest = new RegisterRequest( name, email, username, password, responseListener );
-                                                      RequestQueue queue = Volley.newRequestQueue( register.this );
-                                                      queue.add( registerRequest );
+                                                          RegisterRequest registerRequest = new RegisterRequest(name, email, username, password, responseListener);
+                                                          RequestQueue queue = Volley.newRequestQueue(register.this);
+                                                          queue.add(registerRequest);
 
-                                                  } else {
-                                                      AlertDialog.Builder b = new AlertDialog.Builder( register.this );
-                                                      b.setMessage( "Password Mismatch" )
-                                                              .setNegativeButton( "Retry", null )
-                                                              .create()
-                                                              .show();
-                                                      progress.setVisibility( View.GONE );
-                                                      bregister.setVisibility( View.VISIBLE );
+                                                      } else {
+                                                          AlertDialog.Builder b = new AlertDialog.Builder(register.this);
+                                                          b.setMessage("Password Mismatch")
+                                                                  .setNegativeButton("Retry", null)
+                                                                  .create()
+                                                                  .show();
+                                                          progress.setVisibility(View.GONE);
+                                                          bregister.setVisibility(View.VISIBLE);
+                                                      }
                                                   }
                                               }
 

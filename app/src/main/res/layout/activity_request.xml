@@ -54,7 +54,8 @@
         android:id="@+id/scontact"
         android:background="@drawable/gray"
         android:hint="  Contact info"
-        />
+        android:maxLines="1"
+        android:numeric="integer" />
 
     <Space
         android:layout_width="match_parent"
@@ -64,12 +65,13 @@
     <EditText
         android:layout_width="149dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="  age"
+        android:hint="age"
         android:ems="10"
         android:maxLines="1"
+        android:maxLength="2"
         android:background="@drawable/gray"
-        android:id="@+id/sage"/>
+        android:id="@+id/sage"
+        android:inputType="numberDecimal" />
 
     <Space
         android:layout_width="match_parent"
@@ -96,6 +98,7 @@
         android:id="@+id/sstate"
         android:background="@drawable/gray"
         android:hint="State"
+        android:maxLines="1"
         />
 
     <Space
@@ -109,6 +112,7 @@
         android:id="@+id/scity"
         android:background="@drawable/gray"
         android:hint="city"
+        android:maxLines="1"
         />
 
     <Space
