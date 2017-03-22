@@ -68,6 +68,8 @@ public class Login extends AppCompatActivity {
                                         .setNegativeButton( "Retry", null )
                                         .create()
                                         .show();
+                                blogin.setVisibility( View.VISIBLE );
+                                progress.setVisibility(View.GONE );
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

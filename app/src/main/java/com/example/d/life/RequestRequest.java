@@ -12,7 +12,7 @@ public class RequestRequest extends StringRequest {
     private Map<String,String> params;
 
 
-    public RequestRequest(String organ, String blood, String contact,int age,String state,String city, String reason,Response.Listener<String> listener){
+    public RequestRequest(String organ, String blood, String contact,int age,String state,String city, String reason,String username ,Response.Listener<String> listener){
 
         super(Method.POST,Register_Request_URL,listener,null);
         params= new HashMap<>( );
@@ -23,6 +23,7 @@ public class RequestRequest extends StringRequest {
         params.put("city",city);
         params.put("state",state );
         params.put("reason",reason);
+        params.put( "username",username );
 
 
     }

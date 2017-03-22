@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    String username;
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,20 +19,39 @@ public class MainActivity extends AppCompatActivity {
 
        final TextView etusername = (TextView) findViewById( R.id.etusername );
        etusername.setVisibility( View.GONE );
+       Button request = (Button) findViewById((R.id.request)) ;
+       request.setVisibility(View.GONE);
+
+
        Button login = (Button) findViewById( R.id.login );
+       Button logout=(Button) findViewById(R.id.logout);
+       Button register=(Button) findViewById(R.id.register);
+
 
        Intent intent = getIntent();
-       String username = intent.getStringExtra( "username" );
+       username = intent.getStringExtra( "username" );
        String password = intent.getStringExtra( "password" );
        if(username!=null){
            etusername.setVisibility( View.VISIBLE );
            login.setVisibility( View.GONE );
+           logout.setVisibility(View.VISIBLE);
+           register.setVisibility(View.GONE);
+           request.setVisibility(View.VISIBLE);
+
+
        }
 
-       String message = "welcome "+username;
+       String message =username;
        etusername.setText(message);
 
        }
+
+    public void Logout(View v){
+        finish();
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+
+    }
     public void buttonOnClick(View v){
         Button button=(Button) v;
         Intent intent = new Intent(this, register.class);
@@ -46,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Request(View v){
-        Button l=(Button) v;
-        startActivity(new Intent(getApplicationContext(),Request.class));
+        Intent intent = new Intent( MainActivity.this,Request.class);
+        intent.putExtra( "username",username );
+        startActivity( intent );
     }
 
     public void Donor(View v){
