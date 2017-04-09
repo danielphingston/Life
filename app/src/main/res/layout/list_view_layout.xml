@@ -1,92 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical" android:layout_width="match_parent"
-              android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bound"
+    android:orientation="vertical"
+    tools:context="com.example.d.life.MainActivity"
     android:weightSum="1">
 
 
     <TextView
+        android:id="@+id/names"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New name"
-        android:id="@+id/names"
+        android:layout_marginLeft="15dp"
         android:singleLine="false"
+        android:text="New name"
         android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="15dp" />
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New organ"
             android:id="@+id/organs"
-            android:typeface="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="New organ"
             android:textStyle="bold|italic"
-            android:layout_marginLeft="15dp" />
+            android:typeface="serif" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New blood"
             android:id="@+id/bloods"
-            android:layout_marginLeft="10dp"
-            android:typeface="serif"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New contact"
+            android:layout_marginLeft="10dp"
+            android:text="New blood"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
+
+        <TextView
             android:id="@+id/contacts"
-            android:layout_marginLeft="10dp"
-            android:typeface="serif"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New age"
+            android:layout_marginLeft="10dp"
+            android:text="New contact"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
+
+        <TextView
             android:id="@+id/ages"
-            android:layout_marginLeft="10dp"
-            android:typeface="serif"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New state"
+            android:layout_marginLeft="10dp"
+            android:text="New age"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
+
+        <TextView
             android:id="@+id/states"
-            android:layout_marginLeft="10dp"
-            android:typeface="serif"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New city"
-            android:id="@+id/citys"
             android:layout_marginLeft="10dp"
-            android:typeface="serif"
-            android:textStyle="bold|italic" />
+            android:text="New state"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/citys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="New city"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/reasons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New reason"
-        android:id="@+id/reasons"
         android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
         android:layout_weight="0.09"
+        android:text="New reason"
         android:textStyle="italic"
-        android:typeface="normal"
-        android:layout_marginLeft="20dp" />
+        android:typeface="normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New username"
+        android:visibility="gone"
+        android:id="@+id/usernames"
+        android:layout_gravity="right" />
+
+    <Button
+        android:id="@+id/sbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Donate " />
 
 
 </LinearLayout>

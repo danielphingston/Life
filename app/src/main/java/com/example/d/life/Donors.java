@@ -30,9 +30,14 @@ public class Donors extends AppCompatActivity implements View.OnClickListener {
         buttonGet = (Button) findViewById(R.id.buttonGet);
         buttonGet.setOnClickListener(this);
         listView = (ListView) findViewById(R.id.listView);
+
+
+
+
+
     }
 
-    private void sendRequest(){
+    private void sendRequest() {
 
         StringRequest stringRequest = new StringRequest(JSON_URL,
                 new Response.Listener<String>() {
@@ -44,7 +49,7 @@ public class Donors extends AppCompatActivity implements View.OnClickListener {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Donors.this,error.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(Donors.this, error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -52,10 +57,10 @@ public class Donors extends AppCompatActivity implements View.OnClickListener {
         requestQueue.add(stringRequest);
     }
 
-    private void showJSON(String json){
+    private void showJSON(String json) {
         ParseJSON pj = new ParseJSON(json);
         pj.parseJSON();
-        CustomList cl = new CustomList(this, ParseJSON.organs,ParseJSON.bloods,ParseJSON.contacts,ParseJSON.ages,ParseJSON.states,ParseJSON.citys,ParseJSON.reasons,ParseJSON.names);
+        CustomList cl = new CustomList(this, ParseJSON.organs, ParseJSON.bloods, ParseJSON.contacts, ParseJSON.ages, ParseJSON.states, ParseJSON.citys, ParseJSON.reasons, ParseJSON.names,ParseJSON.usernames);
         listView.setAdapter(cl);
     }
 
@@ -63,4 +68,7 @@ public class Donors extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         sendRequest();
     }
+
+
+
 }
