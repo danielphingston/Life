@@ -32,7 +32,7 @@ public class Request extends AppCompatActivity {
         final EditText scontact = (EditText) findViewById( R.id.scontact );
         final EditText sage = (EditText) findViewById( R.id.sage );
         final EditText sreason = (EditText) findViewById( R.id.sreason );
-        final EditText sstate = (EditText) findViewById( R.id.sstate );
+        final Spinner sstate = (Spinner) findViewById( R.id.sstate );
         final EditText scity = (EditText) findViewById( R.id.scity );
         final Button brequest = (Button) findViewById( R.id.brequest );
 
@@ -43,15 +43,18 @@ public class Request extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
                 if (sage.length() <= 0) {
                     sage.setError("cannot be empty");
+                } else if (scontact.length() != 10) {
+                    scontact.setError("invalid number");
                 } else {
                     final String organ = sorgan.getSelectedItem().toString();
                     final String blood = sblood.getSelectedItem().toString();
                     final String contact = scontact.getText().toString();
                     final int age = Integer.parseInt(sage.getText().toString());
                     final String reason = sreason.getText().toString();
-                    final String state = sstate.getText().toString();
+                    final String state = sstate.getSelectedItem().toString();
                     final String city = scity.getText().toString();
 
 

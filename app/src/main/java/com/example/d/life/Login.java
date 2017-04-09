@@ -1,6 +1,8 @@
 package com.example.d.life;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +19,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity{
 
 
     @Override
@@ -51,10 +53,17 @@ public class Login extends AppCompatActivity {
                             if (success) {
                                 String username = jsonResponse.getString( "username" );
                                 String password = jsonResponse.getString( "password" );
+                                String notify = jsonResponse.getString( "notify" );
+
+
+                                SharedPreferences loginData = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = loginData.edit();
+                                editor.putString("username", username);
+                                editor.putString("password", password);
+                                editor.putString("notify", notify);
+                                editor.apply();
 
                                 Intent intent = new Intent(Login.this, MainActivity.class);
-                                intent.putExtra( "username",username );
-                                intent.putExtra( "password",password );
                                 intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                                 startActivity(intent);
                                 Toast.makeText( getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT ).show();
