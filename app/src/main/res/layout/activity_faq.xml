@@ -28,7 +28,9 @@
             android:text="@string/faq1"
             android:textScaleX="2"
             android:textStyle="bold"
-            android:contentDescription="a0"/>
+            android:contentDescription="a0"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:id="@+id/a0"
@@ -46,7 +48,9 @@
             android:onClick="toggle_contents"
             android:textScaleX="2"
             android:textStyle="bold"
-            android:contentDescription="a1"/>
+            android:contentDescription="a1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:id="@+id/a1"
@@ -65,7 +69,9 @@
             android:onClick="toggle_contents"
             android:textScaleX="2"
             android:textStyle="bold"
-            android:contentDescription="a2"/>
+            android:contentDescription="a2"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:id="@+id/a2"
@@ -73,6 +79,26 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.85"
             android:text="@string/a3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q4"
+            android:id="@+id/textView10"
+            android:contentDescription="a3"
+            android:clickable="false"
+            android:textScaleX="2"
+            android:onClick="toggle_contents"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a4"
+            android:id="@+id/a3"
+            style="@style/Base.AlertDialog.AppCompat.Light" />
     </LinearLayout>
 
 

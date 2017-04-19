@@ -101,5 +101,16 @@
 
     \n<b>Tendons</b> - Tissues which attach muscles to bones. Tendon transplants are recommended for patients who have lost muscle function due to nerve injury or damage to tendons. It improves the recipient’s life and makes it pain free.</string>
 
+    <string name="q4">What Medical conditions prevent me from donating?</string>
+    <string name="a4">Having a medical condition does not always prevent you from becoming an organ donor. At death, a qualified doctor responsible for your care will decide whether some or all organs are suitable for transplant.
+
+\nBut, there are a few conditions that will exclude you from donating organs.
+
+\nYou cannot become an organ donor if you have:\n
+
+\nHIV, (in some circumstances people with HIV can donate to another person who already has HIV), or
+\nCreutzfeldt-Jakob Disease (CJD), or
+\nCancer that has spread in the last 12 months
+</string>
 
 </resources>

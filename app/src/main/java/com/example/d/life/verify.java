@@ -117,20 +117,17 @@ public class verify extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.v_verify:
                 JSON_URL = "http://life2.net16.net/verify.php";
-                Toast.makeText(verify.this, "button1", Toast.LENGTH_LONG).show();
                 sendRequest();
                 break;
 
             case R.id.v_delete:
 
                 JSON_URL = "http://life2.net16.net/delete.php";
-                Toast.makeText(verify.this, "button2", Toast.LENGTH_SHORT).show();
                 sendRequest();
                 break;
             case R.id.v_change:
 
                 JSON_URL = "http://life2.net16.net/change.php";
-                Toast.makeText(verify.this, "button3", Toast.LENGTH_SHORT).show();
                 sendRequest();
                 break;
         }

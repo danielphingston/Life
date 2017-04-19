@@ -22,7 +22,7 @@ public class FAQ extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_faq );
 
-        for(int j=0; j<3; j++) {
+        for(int j=0; j<4; j++) {
             String x = "a" + j;
             int resID = getResources().getIdentifier( x, "id", getPackageName() );
             txt_help_gest = (TextView) findViewById(resID);
