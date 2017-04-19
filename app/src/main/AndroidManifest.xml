@@ -27,7 +27,9 @@
         <activity android:name=".pd" />
         <activity android:name=".Login" />
         <activity android:name=".notify" />
-        <activity android:name=".userprofile"></activity>
+        <activity android:name=".userprofile" />
+        <activity android:name=".admin" />
+        <activity android:name=".verify"></activity>
     </application>
 
 </manifest>

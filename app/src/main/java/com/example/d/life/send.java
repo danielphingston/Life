@@ -13,12 +13,12 @@ public class send extends StringRequest {
     private Map<String,String> params;
 
 
-    public send(String notify,String username,Response.Listener<String> listener){
+    public send(String notify,String receiver,Response.Listener<String> listener){
 
         super(Method.POST,Register_Request_URL,listener,null);
         params= new HashMap<>( );
-        params.put( "notify",notify);
-        params.put("username",username);
+        params.put("notify",notify);
+        params.put("receiver",receiver);
     }
 
     @Override

@@ -19,10 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         final TextView etusername = (TextView) findViewById(R.id.etusername);
         etusername.setVisibility(View.GONE);
         Button request = (Button) findViewById((R.id.request));
         request.setVisibility(View.GONE);
+        findViewById(R.id.button3).setVisibility(View.GONE);
+        findViewById(R.id.button10).setVisibility(View.GONE);
 
 
         Button login = (Button) findViewById(R.id.login);
@@ -33,15 +36,18 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences loginData = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         username = loginData.getString("username", null);
 
+
         if (username != null) {
             etusername.setVisibility(View.VISIBLE);
             login.setVisibility(View.GONE);
             logout.setVisibility(View.VISIBLE);
             register.setVisibility(View.GONE);
             request.setVisibility(View.VISIBLE);
-
+            findViewById(R.id.button3).setVisibility(View.VISIBLE);
+            findViewById(R.id.button10).setVisibility(View.VISIBLE);
 
         }
+
 
         String message = username;
         etusername.setText(message);
@@ -100,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void notify(View v){
+
         startActivity(new Intent(getApplicationContext(), notify.class));
 
     }

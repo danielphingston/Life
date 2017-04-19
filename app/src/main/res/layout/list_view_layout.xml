@@ -43,14 +43,6 @@
             android:textStyle="bold|italic"
             android:typeface="serif" />
 
-        <TextView
-            android:id="@+id/contacts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="New contact"
-            android:textStyle="bold|italic"
-            android:typeface="serif" />
 
         <TextView
             android:id="@+id/ages"
@@ -70,14 +62,8 @@
             android:textStyle="bold|italic"
             android:typeface="serif" />
 
-        <TextView
-            android:id="@+id/citys"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="New city"
-            android:textStyle="bold|italic"
-            android:typeface="serif" />
+
+
 
     </LinearLayout>
 

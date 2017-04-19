@@ -29,11 +29,8 @@ public class Request extends AppCompatActivity {
         username = intent.getStringExtra( "username" );
         final Spinner sorgan = (Spinner) findViewById( R.id.sorgan );
         final Spinner sblood = (Spinner) findViewById( R.id.sblood );
-        final EditText scontact = (EditText) findViewById( R.id.scontact );
         final EditText sage = (EditText) findViewById( R.id.sage );
         final EditText sreason = (EditText) findViewById( R.id.sreason );
-        final Spinner sstate = (Spinner) findViewById( R.id.sstate );
-        final EditText scity = (EditText) findViewById( R.id.scity );
         final Button brequest = (Button) findViewById( R.id.brequest );
 
 
@@ -46,16 +43,13 @@ public class Request extends AppCompatActivity {
 
                 if (sage.length() <= 0) {
                     sage.setError("cannot be empty");
-                } else if (scontact.length() != 10) {
-                    scontact.setError("invalid number");
-                } else {
+                }
+                 else {
                     final String organ = sorgan.getSelectedItem().toString();
                     final String blood = sblood.getSelectedItem().toString();
-                    final String contact = scontact.getText().toString();
                     final int age = Integer.parseInt(sage.getText().toString());
                     final String reason = sreason.getText().toString();
-                    final String state = sstate.getSelectedItem().toString();
-                    final String city = scity.getText().toString();
+
 
 
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -95,7 +89,7 @@ public class Request extends AppCompatActivity {
                     };
 
 
-                    RequestRequest requestRequest = new RequestRequest(organ, blood, contact, age, state, city, reason, username, responseListener);
+                    RequestRequest requestRequest = new RequestRequest(organ, blood, age,reason, username, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(Request.this);
                     queue.add(requestRequest);
 
