@@ -39,6 +39,8 @@ public class register extends AppCompatActivity {
         final EditText etpassword = (EditText) findViewById(R.id.etpassword);
         final Button bregister = (Button) findViewById(R.id.bregister);
         final EditText etemail = (EditText) findViewById(R.id.etemail);
+        final EditText etcontact=(EditText) findViewById(R.id.etcontact);
+        final Spinner etlocation = (Spinner) findViewById(R.id.etloc) ;
 
 
         bregister.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +55,8 @@ public class register extends AppCompatActivity {
                                              final String password = etpassword.getText().toString();
                                              final String name = etname.getText().toString();
                                              final String email = etemail.getText().toString();
+                                             final String contact= etcontact.getText().toString();
+                                             final String location = etlocation.getSelectedItem().toString();
 
                                              //errors
                                              if (etpassword.length() < 6) {
@@ -85,7 +89,14 @@ public class register extends AppCompatActivity {
                                                  bregister.setVisibility(View.VISIBLE);
                                                  return;
 
+                                             }else if (etcontact.length()!=10){
+                                                 etcontact.setError("invalid number");
+                                                 progress.setVisibility(View.GONE);
+                                                 bregister.setVisibility(View.VISIBLE);
+                                                 return;
                                              }
+
+
                                              //errors end
                                              else {
 
@@ -123,7 +134,7 @@ public class register extends AppCompatActivity {
                                                      };
 
 
-                                                     RegisterRequest registerRequest = new RegisterRequest(name, email, username, password, responseListener);
+                                                     RegisterRequest registerRequest = new RegisterRequest(name, email, username, password,location,contact, responseListener);
                                                      RequestQueue queue = Volley.newRequestQueue(register.this);
                                                      queue.add(registerRequest);
 

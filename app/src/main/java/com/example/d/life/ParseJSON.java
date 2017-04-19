@@ -11,7 +11,6 @@ public class ParseJSON {
     public static String[] contacts;
     public static String[] ages;
     public static String[] states;
-    public static String[] citys;
     public static String[] reasons;
     public static String[] names;
     public static String[] usernames;
@@ -22,7 +21,6 @@ public class ParseJSON {
     public static final String KEY_CONTACT = "contact";
     public static final String KEY_AGE ="age";
     public static final String KEY_STATE ="state";
-    public static final String KEY_CITY ="city";
     public static final String KEY_REASON ="reason";
     public static final String KEY_NAME="name";
     public static final String KEY_USERNAME="username";
@@ -47,7 +45,6 @@ public class ParseJSON {
             contacts = new String[users.length()];
             ages = new String[users.length()];
             states =new String[users.length()];
-            citys =new String[users.length()];
             reasons =new String[users.length()];
             names= new String[users.length()];
             usernames= new String[users.length()];
@@ -59,7 +56,6 @@ public class ParseJSON {
                 contacts[i] = jo.getString(KEY_CONTACT);
                 ages[i] = jo.getString( KEY_AGE );
                 states[i]=jo.getString( KEY_STATE );
-                citys[i]=jo.getString( KEY_CITY );
                 reasons[i]=jo.getString( KEY_REASON );
                 names[i]=jo.getString(KEY_NAME);
                 usernames[i]=jo.getString(KEY_USERNAME);

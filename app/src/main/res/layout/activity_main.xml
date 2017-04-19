@@ -44,6 +44,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/button"
             android:onClick="Donate"
+            android:visibility="gone"
             android:text="Become Donor" />
 
         <Space
@@ -51,6 +52,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/button1"
+            android:nestedScrollingEnabled="false"
+            android:onClick="Login"
+            android:text="Login"
+            android:layout_gravity="center_horizontal" />
 
         <Button
             android:id="@+id/request"
@@ -64,6 +77,20 @@
             android:nestedScrollingEnabled="true"
             android:onClick="Request"
             android:text="Request" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button1"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:elegantTextHeight="false"
+            android:onClick="buttonOnClick"
+            android:text="Register"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal" />
 
         <Space
             android:layout_width="match_parent"
@@ -116,20 +143,11 @@
             android:layout_centerHorizontal="true"
             android:onClick="notify"
             android:clickable="true"
+            android:background="@drawable/box"
             android:gravity="center_vertical|center|center_horizontal"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorPrimary" />
-
-        <Button
-            android:id="@+id/login"
-            android:layout_width="83dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/button1"
-            android:nestedScrollingEnabled="false"
-            android:onClick="Login"
-            android:text="Login" />
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/logout"
@@ -141,19 +159,6 @@
             android:onClick="Logout"
             android:text="Log out"
             android:visibility="gone" />
-
-        <Button
-            android:id="@+id/register"
-            android:layout_width="83dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button1"
-            android:clickable="false"
-            android:contextClickable="false"
-            android:elegantTextHeight="false"
-            android:onClick="buttonOnClick"
-            android:text="Register"
-            android:textSize="12sp" />
 
 
         <Space

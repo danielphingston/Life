@@ -12,15 +12,34 @@
     android:weightSum="1">
 
 
-    <TextView
-        android:id="@+id/not1"
-        android:layout_width="315dp"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Large Text"
-        android:clickable="true"
-        android:onClick="userpro"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_weight="0.29" />
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Notifications"
+            android:id="@+id/VNB"
+            android:layout_gravity="right"
+            android:layout_weight="0.04" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View PD Matches"
+            android:id="@+id/array"
+            android:layout_weight="0.04" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:id="@+id/list"
+        android:layout_marginTop="20dp" />
 
 
 </LinearLayout>

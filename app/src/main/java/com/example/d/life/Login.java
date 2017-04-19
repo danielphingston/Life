@@ -53,20 +53,56 @@ public class Login extends AppCompatActivity{
                             if (success) {
                                 String username = jsonResponse.getString( "username" );
                                 String password = jsonResponse.getString( "password" );
-                                String notify = jsonResponse.getString( "notify" );
+                                String verify = jsonResponse.getString("verify");
+                                String admin = jsonResponse.getString("admin");
 
 
-                                SharedPreferences loginData = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-                                SharedPreferences.Editor editor = loginData.edit();
-                                editor.putString("username", username);
-                                editor.putString("password", password);
-                                editor.putString("notify", notify);
-                                editor.apply();
+                                if(!admin.equals("Y")) {
 
-                                Intent intent = new Intent(Login.this, MainActivity.class);
-                                intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
-                                startActivity(intent);
-                                Toast.makeText( getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT ).show();
+
+                                    SharedPreferences loginData = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = loginData.edit();
+                                    editor.putString("username", username);
+                                    editor.putString("password", password);
+                                    editor.putString("verify", verify);
+                                    editor.apply();
+
+                                    if(verify.equals("Y"))
+                                    {
+                                        Intent intent = new Intent(Login.this, MainActivity.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(intent);
+                                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else
+                                    {
+                                        loginData = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                                        editor = loginData.edit();
+                                        editor.putString("username", null);
+                                        editor.apply();
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder( Login.this );
+                                        builder.setMessage( "Please verrify With an Admin" )
+                                                .setNegativeButton( "Ok", null )
+                                                .create()
+                                                .show();
+                                        blogin.setVisibility( View.VISIBLE );
+                                        progress.setVisibility(View.GONE );
+
+                                    }
+
+
+                                }
+                                else
+                                {
+
+                                    Intent intent = new Intent(Login.this, admin.class);
+                                    startActivity(intent);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    finish();
+                                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+
+                                }
 
 
 

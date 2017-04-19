@@ -21,10 +21,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by Belal on 9/22/2015.
- */
-
 
 public class CustomList extends ArrayAdapter<String> {
     private String[] organs;
@@ -32,14 +28,14 @@ public class CustomList extends ArrayAdapter<String> {
     private String[] contacts;
     private String[] ages;
     private String[] states;
-    private String[] citys;
+
     private String[] reasons;
     private String[] names;
     private String[] usernames;
     private Activity context;
 
 
-    public CustomList(Activity context, String[] organs, String[] bloods, String[] contacts,String[] ages,String[] states,String[] citys,String[] reasons,String[] names,String[] usernames) {
+    public CustomList(Activity context, String[] organs, String[] bloods, String[] contacts,String[] ages,String[] states,String[] reasons,String[] names,String[] usernames) {
         super(context, R.layout.list_view_layout, organs);
         this.context = context;
         this.organs = organs;
@@ -47,7 +43,7 @@ public class CustomList extends ArrayAdapter<String> {
         this.contacts = contacts;
         this.ages = ages;
         this.states=states;
-        this.citys=citys;
+
         this.reasons=reasons;
         this.names=names;
         this.usernames=usernames;
@@ -63,23 +59,21 @@ public class CustomList extends ArrayAdapter<String> {
         View listViewItem = inflater.inflate(R.layout.list_view_layout, null, true);
         TextView textViewOrgan = (TextView) listViewItem.findViewById(R.id.organs);
         TextView textViewBlood = (TextView) listViewItem.findViewById(R.id.bloods);
-        TextView textViewContact = (TextView) listViewItem.findViewById(R.id.contacts);
         TextView textViewAge = (TextView) listViewItem.findViewById(R.id.ages);
         TextView textViewState = (TextView) listViewItem.findViewById(R.id.states);
-        TextView textViewCity =(TextView)  listViewItem.findViewById( R.id.citys );
         TextView textViewReason=(TextView) listViewItem.findViewById( R.id.reasons );
         TextView textViewName=(TextView) listViewItem.findViewById(R.id.names);
         TextView textViewusername=(TextView) listViewItem.findViewById(R.id.usernames);
 
-        Button deleteImageView = (Button) listViewItem.findViewById(R.id.sbutton);
-        deleteImageView.setOnClickListener(new View.OnClickListener() {
+        Button button = (Button) listViewItem.findViewById(R.id.sbutton);
+        button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 SharedPreferences loginData = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-                String name = loginData.getString("username",null);
+                String sender = loginData.getString("username",null);
 
-                String username =usernames[position].toString();
-                String notify=name+" wants to donate to you";
+                String receiver =usernames[position].toString();
+                String notify=sender+" wants to donate to you";
                 Toast.makeText(getContext(),notify,Toast.LENGTH_SHORT).show();
 
 
@@ -116,7 +110,7 @@ public class CustomList extends ArrayAdapter<String> {
                     };
 
 
-                    send registerRequest = new send(notify,username,responseListener);
+                    send registerRequest = new send(notify,receiver,responseListener);
                     RequestQueue queue = Volley.newRequestQueue(getContext());
                     queue.add(registerRequest);
 
@@ -131,10 +125,9 @@ public class CustomList extends ArrayAdapter<String> {
 
         textViewOrgan.setText(organs[position]);
         textViewBlood.setText(bloods[position]);
-        textViewContact.setText(contacts[position]);
         textViewAge.setText( ages[position] );
         textViewState.setText( states[position] );
-        textViewCity.setText( citys[position] );
+
         textViewReason.setText( reasons[position] );
         textViewName.setText(names[position]);
         textViewusername.setText(usernames[position]);
